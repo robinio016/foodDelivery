@@ -1,0 +1,246 @@
+<div class="card mx-auto my-2 p-4" style="width:75%">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb arr-right bg-white">
+            <li class="breadcrumb-item"><a href="#">home</a></li>
+            <li class="breadcrumb-item"><a href="#">city1</a></li>
+            <li class="breadcrumb-item"><a href="#">rest1</a></li>
+            <li class="breadcrumb-item active" aria-current="page">checkout</li>
+        </ol>
+      </nav>
+      <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+              <div class="card-header d-flex justify-content-between">
+                <h5>Order Summary</h5>
+                <span class="text-success">open</span>
+              </div>
+              <div class="card-body">
+                <h5>Resto Name</h5>
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col">item(s)</th>
+                      <th scope="col">Qty</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td scope="row">item 1</td>
+                      <td>2</td>
+                      <td>25.00 TND</td>
+                      <td>50.00 TND</td>
+                    </tr>
+                    <tr>
+                      <td scope="row">some long item 2 name</td>
+                      <td>1</td>
+                      <td>20.00 TND</td>
+                      <td>20.00 TND</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <hr class="w-75">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="withCutlery">
+                      <label for="withCutlery" class="custom-control-label"><span  class="text-success"><small>No cutlery </small></span></label><small>, Make your order eco-friendly</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header d-flex justify-content-between">
+              <h5>Delivery Address</h5>
+              <a class="btn" (click)="selectAddress()"><span class="text-success">ADD</span></a>
+            </div>
+            <div class="card-body">
+                <p *ngIf="!myDeliveryAddress" class="text-center text-danger">please add you address</p>
+                <p *ngIf="myDeliveryAddress" class="text-center text-success">{{myDeliveryAddress}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- delivery time -->
+      <div class="row my-3">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header d-flex justify-content-between">
+              <h5>Delivery Time</h5>
+            </div>
+            <div class="card-body">
+               <div class="row">
+                 <div class="col-md-6">
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" id="timeDelivery" name="timeDelivery" value="now" [(ngModel)]="time">
+                    <label for="timeDelivery" class="custom-control-label">Now</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" class="custom-control-input" id="timeDelivery2" name="timeDelivery" value="later" [(ngModel)]="time">
+                      <label for="timeDelivery2" class="custom-control-label">Specify Time</label>
+                    </div>
+                    <div class="row p-2">
+                      <div class="col text-muted">
+                          <small>Please check the date and time below</small>
+                      </div>
+                    </div>
+                    <div class="row p-2">
+                      <div class="col">
+                          <div *ngIf="time=='later'" class="btn-group" dropdown>
+                            <button id="timeBtn" type="button" dropdownToggle  
+                                    class="btn btn-secondary dropdown-toggle" 
+                                    aria-expanded="false">
+                              Dropdown
+                            </button>
+                            <ul *dropdownMenu class="dropdown-menu" aria-labelledby="timeBtn" role="menu">
+                              <li role="menuitem"><a class="dropdown-item" href="#">Dropdown link</a></li>
+                              <li role="menuitem"><a class="dropdown-item" href="#">Dropdown link</a></li>
+                            </ul>
+                          </div>
+                          <div *ngIf="time=='now'" class="btn-group" dropdown>
+                            <button class="btn btn-secondary dropdown-toggle"
+                                    id="timeNowBtn"
+                                    type="button"
+                                    aria-expanded="false"
+                                    dropdownToggle
+                                    disabled="true">
+                                Now
+                            </button>
+
+                          </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                   <div class="form-group">
+                     <label for="specialRequest text-muted"><small>Add special requests here.</small></label>
+                     <textarea class="form-control" id="specialRequest" row="3"></textarea>
+                   </div>
+                </div>
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- payment summary -->
+      <div class="row my-3">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h5>Payment Summary</h5>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-8">
+                    <p><b>Select your payment method</b></p>
+                    <accordion class="w-75" [closeOthers]="true">
+                      <accordion-group [isOpen]="creditCardPayment">
+                        <div class="custom-control custom-radio" accordion-heading (click)="panelClicked('credit card')">
+                            <input type="radio" class="custom-control-input" id="credtiCardPayment" name="paymentMethod" [value]="true" [(ngModel)]="creditCardPayment">
+                            <label class="custom-control-label" for="credtiCardPayment">
+                                <img src="../../assets/mastercard-icon.svg" width="40px" class="mx-2">
+                                <b>Credit Card</b>
+                            </label>
+                            
+                          </div>
+                          <form>
+                            <div class="from-row">
+                                <div class="form-group col-md-12">
+                                    <label for="cardNumber">Card Number</label>
+                                    <input type="text" class="form-control" id="cardNumber" placeholder="Card Number">
+                                  </div>
+                            </div>
+                            <div class="from-row">
+                                <div class="form-group col-md-12">
+                                    <label for="expiryDate">Card expiry date</label>
+                                    <div class="from-row d-flex align-items-center">
+                                        <select class="custom-select mr-sm-2" id="expiryDate" style="width: 100px;">
+                                            <option selected>mm</option>
+                                            <option value="1">01</option>
+                                            <option value="2">02</option>
+                                            <option value="3">03</option>
+                                          </select>
+                                          <span class="px-3">/</span>
+                                          <select class="custom-select mr-sm-2" id="expiryDate" style="width: 100px;">
+                                              <option selected>2019</option>
+                                              <option value="1">2020</option>
+                                              <option value="2">2021</option>
+                                          </select>
+                                    </div>
+                                    
+                                  </div>
+                            </div>
+                            <div class="from-row">
+                                <div class="form-group col-md-12">
+                                    <label for="cardVerificationNumber">Card verification value</label>
+                                    <input type="text" class="form-control" id="cardVerificationNumber" style="width: 150px;">
+                                  </div>
+                            </div>
+
+                          </form>
+                      </accordion-group>
+                      <accordion-group [isOpen]="visaPayment">
+                        <div class="custom-control custom-radio" accordion-heading (click)="panelClicked('visa')">
+                            <input type="radio" class="custom-control-input" id="visaCardPayment" name="paymentMethod" [value]="true" [(ngModel)]="visaPayment">
+                            <label class="custom-control-label" for="visaCardPayment">
+                                <img src="../../assets/visacheckout_brand.svg" width="40px" class="mx-2">
+                                <b>Visa Checkout</b>
+                            </label>
+                            
+                          </div>
+                          service is not available now
+                      </accordion-group>
+                      <accordion-group [isDisabled]="true">
+                        <div class="custom-control custom-radio" accordion-heading (click)="panelClicked('cach')">
+                            <input type="radio" class="custom-control-input" id="cachPayment" name="paymentMethod" [value]="true" [(ngModel)]="cachPayment">
+                            <label class="custom-control-label" for="cachPayment">
+                                <img src="../../assets/cash-icon.svg" width="40px" class="mx-2">
+                                <b>Cach</b>
+                            </label>
+                          </div>
+                      </accordion-group>
+                    </accordion>
+                    {{creditCardPayment}} , {{visaPayment}} ,{{cachPayment}}
+                </div>
+                <div class="col-md-4">
+                  <table class="w-100">
+                    <tbody>
+                        <tr>
+                          <td>Subtotal</td>
+                          <td class="pull-rigth">TND 33.00</td>
+                        </tr>
+                        <tr>
+                          <td>Delivery Charges</td>
+                          <td class="pull-rigth">TND 12.00</td>
+                        </tr>
+                        <tr>
+                          <td><b>Total Amount</b></td>
+                          <td class="pull-rigth"><b>TND 45.00</b></td>
+                        </tr>
+                        <tr class="border-top">
+                          <td>Pay by Credit Card</td>
+                          <td class="pull-rigth">TND 45.00</td>
+                        </tr>
+                    </tbody>
+                  </table>
+                  <div class="row mt-3">
+                    <div class="col-md-12">
+                      <button type="button" class="btn btn-success btn-block text-uppercase">Place Order</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+</div>

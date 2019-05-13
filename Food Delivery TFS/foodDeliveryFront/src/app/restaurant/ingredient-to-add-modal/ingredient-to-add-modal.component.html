@@ -1,0 +1,135 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Add Item Choices</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-md-6 small">
+      <h5>Spicy Chicken Big Stack Meal</h5>
+      <p class="text-muted">For a limited time only, introducing the all new big stack, made up of 2 100% crispy chicken between double decker buns, 1 slice of cheese, with crunchy lettuce, onions and pickles topped off with the all new spicy pickled mayo. Served with fries and drink.</p>
+    </div>
+    <div class="col-md-6 d-flex justify-content-between">
+      <div class="small">
+        <div class="input-group" style="height: 30px;">
+          <label class="mr-2" for="qty">Qty</label>
+          <div class="input-group-prepend">
+            <button class="btn btn-primary btn-sm" type="button"><i class="text-white fa fa-plus"></i></button>
+          </div>
+          <input type="text" class="form-control" id="qty" style="width: 35px;height: 30px;" readonly>
+          <div class="input-group-append">
+            <button class="btn btn-primary btn-sm" type="button"><i class="text-white fa fa-minus"></i></button>
+          </div>
+        </div>
+      </div>
+      <div>
+          <strong>Price</strong>
+          <span>TND 8.00</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- choose section -->
+  <accordion>
+    <accordion-group #ingredient>
+        <div accordion-heading> <h3 class="float-left">Your choice of --cat1--</h3>
+          <i class="pull-right mt-2 float-xs-right fa"
+          [ngClass]="{'fa-chevron-down': ingredient?.isOpen, 'fa-chevron-up': !ingredient?.isOpen}"></i>
+      </div>
+      <div class = "row small text-muted">
+        <div class="col-md-4">
+          <div class="custom-control custom-radio">
+            <input type="radio" id="choice1" name="category1Section" class="custom-control-input">
+            <label class="custom-control-label pt-1" for="choice1">choice1 (0.5)</label>
+          </div>
+        </div>
+        <div class="col-md-4">
+            <div class="custom-control custom-radio d-flex align-items-center">
+              <input type="radio" id="choice2" name="category1Section" class="custom-control-input">
+              <label class="custom-control-label pt-1" for="choice2">choice2 (0.5)</label>
+            </div>
+        </div>
+        <div class="col-md-4">
+          <div class="custom-control custom-radio">
+              <input type="radio" id="choice3" name="category1Section" class="custom-control-input">
+              <label class="custom-control-label pt-1" for="choice3">choice3 (0.5)</label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="custom-control custom-radio">
+              <input type="radio" id="choice3" name="category1Section" class="custom-control-input">
+              <label class="custom-control-label pt-1" for="choice3">choice3 (0.5)</label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="custom-control custom-radio">
+              <input type="radio" id="choice3" name="category1Section" class="custom-control-input">
+              <label class="custom-control-label pt-1" for="choice3">choice3 (0.5)</label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="custom-control custom-radio">
+              <input type="radio" id="choice3" name="category1Section" class="custom-control-input">
+              <label class="custom-control-label pt-1" for="choice3">choice3 (0.5)</label>
+          </div>
+        </div>
+        <div class="col-md-4">
+            <div class="custom-control custom-radio">
+                <input type="radio" id="choice3" name="category1Section" class="custom-control-input">
+                <label class="custom-control-label pt-1" for="choice3">choice3 (0.5)</label>
+            </div>
+          </div>
+      </div>
+    </accordion-group>
+    <accordion-group>
+        <div accordion-heading><h3 class="float-left">Your choice of --cat2--</h3>
+          <i class="pull-right mt-2 float-xs-right fa"
+          [ngClass]="{'fa-chevron-down': ingredient?.isOpen, 'fa-chevron-up': !ingredient?.isOpen}"></i>
+      </div>
+      <div class="row small text-muted">
+          <div class="col-md-4">
+              <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="cat2choice1" name="category2Section" class="custom-control-input">
+                  <label class="custom-control-label pt-1" for="cat2choice1">check choice1 (0.5)</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="cat2choice1" name="category2Section" class="custom-control-input">
+                  <label class="custom-control-label  pt-1" for="cat2choice1">check choice1 (0.5)</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="cat2choice1" name="category2Section" class="custom-control-input">
+                  <label class="custom-control-label  pt-1" for="cat2choice1">check choice1 (0.5)</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="cat2choice1" name="category2Section" class="custom-control-input">
+                  <label class="custom-control-label  pt-1" for="cat2choice1">check choice1 (0.5)</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="cat2choice1" name="category2Section" class="custom-control-input">
+                  <label class="custom-control-label  pt-1" for="cat2choice1">check choice1 (0.5)</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="cat2choice1  pt-1" name="category2Section" class="custom-control-input">
+                  <label class="custom-control-label" for="cat2choice1">check choice1 (0.5)</label>
+              </div>
+            </div>
+      </div>
+    </accordion-group>
+  </accordion>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary">Add To Card</button>
+  <button type="button" class="btn btn-secondary" (click)="bsModalRef.hide()">{{closeBtnName}}</button>
+</div>
+

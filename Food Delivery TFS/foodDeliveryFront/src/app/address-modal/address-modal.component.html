@@ -1,0 +1,135 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Add New Address</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <agm-map *ngIf="isMapsToShow" [latitude]="marker.lat" 
+                [longitude]="marker.lng"
+                (mapClick)="mapClicked($event)" style="height: 450px"> 
+        <agm-marker [latitude]="marker.lat" 
+                    [longitude]="marker.lng"
+                    [markerDraggable]="marker.draggable"
+                    (dragEnd)="markerDragEnd(marker, $event)">
+          </agm-marker> 
+      </agm-map>
+      <div *ngIf="!isMapsToShow">
+        <form>
+          <fieldset class="form-group">
+          <legend class="col-form-label">Contact Details</legend>   
+            <div class="form-row">
+              <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="First Name">
+              </div>
+              <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Last Name">
+              </div>
+            </div>
+            <div class="form-row mt-3">
+              <div class="col-md-2">
+                  <select class="custom-select" required>
+                    <option value="+08">+08</option>
+                    <option value="+216">+216</option>
+                    <option value="+33">+33</option>
+                    <option value="+976">+976</option>
+                  </select>
+              </div>
+              <div class="col-md-4">
+                  <input type="text" class="form-control" placeholder="Your Mobile Number">
+              </div>
+              <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Landline Number (optional)">
+              </div>
+            </div>
+        </fieldset>
+        <fieldset class="form-group">
+          
+            <legend class="col-form-label">Address Details</legend>
+            <div class="form-row">
+                <div class="col-md-6">
+                    <select class="custom-select">
+                        <option value="Tunis">Tunis</option>
+                        <option value="Bizerte">Bizerte</option>
+                        <option value="Gafsa">Gafsa</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <select class="custom-select">
+                    <option value="Tunis">Tunis</option>
+                    <option value="Bizerte">Bizerte</option>
+                    <option value="Gafsa">Gafsa</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="from-row mt-3">
+                        <div class="form-group d-flex justify-content-center">
+                            <div class="btn-group" btnRadioGroup [(ngModel)]="homeTypeLocation" name="myRadio">
+                                <label class="btn btn-info" btnRadio="appartement"
+                                        tabindex="0" role="button">Appart</label>
+                                <label class="btn btn-info " btnRadio="house"
+                                        tabindex="0" role="button">House</label>
+                                <label class="btn btn-info " btnRadio="office"
+                                        tabindex="0" role="button">Office</label>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-3">
+                    <input type="text" class="form-control" placeholder="Street">
+                </div>
+            </div> 
+            
+          
+            <!-- appartement -->
+              <div class="form-row" *ngIf="homeTypeLocation=='appartement'">
+                  <div class="col-md-6  mt-3">
+                      <input type="text" class="form-control" placeholder="Building">
+                  </div>
+                  <div class="col-md-6  mt-3">
+                      <input type="text" class="form-control" placeholder="Floor">
+                  </div>
+                  <div class="col-md-6  mt-3">
+                      <input type="text" class="form-control" placeholder="Appartement No.">
+                  </div>
+                  <div class="col-md-6  mt-3">
+                      <input type="text" class="form-control" placeholder="Additional Directions (optional)">
+                  </div>
+            </div>
+            <!-- house -->
+            <div class="form-row" *ngIf="homeTypeLocation=='house'">
+                <div class="col-md-6  mt-3">
+                    <input type="text" class="form-control" placeholder="House">
+                </div>
+                <div class="col-md-6  mt-3">
+                    <input type="text" class="form-control" placeholder="Additional Directions (optional)">
+                </div>
+              </div>
+              <!-- office -->
+              <div class="form-row" *ngIf="homeTypeLocation=='office'">
+                  <div class="col-md-6  mt-3">
+                      <input type="text" class="form-control" placeholder="Building">
+                  </div>
+                  <div class="col-md-6  mt-3">
+                      <input type="text" class="form-control" placeholder="Floor">
+                  </div>
+                  <div  class="col-md-6  mt-3">
+                      <input type="text" class="form-control" placeholder="Office">
+                  </div>
+                  <div class="col-md-6  mt-3">
+                      <input type="text" class="form-control" placeholder="Additional Directions (optional)">
+                  </div>
+              </div>  
+          
+        </fieldset>
+        </form>
+      </div>
+  </div>
+  <div class="modal-footer">
+    <button *ngIf="!isMapsToShow" type="button" class="btn btn-outline-primary mr-auto" (click)="isMapsToShow=!isMapsToShow"><i class="fa fa-map-marker mr-2"></i>Show Maps</button>
+    <button *ngIf="isMapsToShow" type="button" class="btn btn-outline-primary mr-auto" (click)="isMapsToShow=!isMapsToShow"><i class="fa fa-address-card mr-2"></i>Show Address Fields</button>
+    <button type="button" class="btn btn-success" (click)="confirm()">Confirm</button>
+    <button type="button" class="btn btn-primary" (click)="cancel()">close</button>
+  </div>

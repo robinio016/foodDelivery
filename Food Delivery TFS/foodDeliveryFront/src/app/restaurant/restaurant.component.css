@@ -1,0 +1,14 @@
+a {
+    transition: color 0.2s ease-in-out;
+  }
+   /* for scrollspy when pointing to an element*/
+  a.active {
+    margin-left:-18px;
+    padding-left: 5px;
+    font-weight: bold;
+    border-left: 5px solid  #E95420; 
+  }
+
+  .nounderline {
+    text-decoration: none !important
+  }

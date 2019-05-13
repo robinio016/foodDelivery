@@ -1,0 +1,383 @@
+<div class="container card px-3 my-2">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb arr-right bg-white">
+          <li class="breadcrumb-item"><a href="#"><small>Home</small></a></li>
+          <li class="breadcrumb-item"><a href="#"><small>city1</small></a></li>
+          <li class="breadcrumb-item active" aria-current="page"><small>resto1</small></li>
+        </ol>
+    </nav>
+    <div class="row">
+        <div class="col-sm-2 d-flex justify-content-center">
+          <div><img src="../../assets/rest1.jpg" class="img-thumbnail" width="150px" height="150px"></div>
+        </div>
+        <div class="col-sm-10">
+            <div class="row">
+                <div class="col-md-10 pl-0">
+                  <h3>restaurant 1</h3>
+                </div>
+                <div class="col-md-2">
+                  <p class="small text-right text-success">Open</p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-9 pl-0">
+                  <p class="text-muted mb-1">sepec1,spec2,spec3</p>
+                </div>
+                <div class="col-md-3 text-right">
+                   <rating [(ngModel)]="rate" [max]="5" [readonly]="true" class="rating"></rating>
+                   <span class="text-right text-muted small">(250)</span>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-9 pl-0">
+                  <p class="text-muted small mb-1">Min. order: AED 0.00</p>
+                </div>
+                <div class="col-md-3">
+                  <p class="small text-right text-success mb-1">
+                    <img src="../../assets/visacheckout_brand.svg" width="30px" height="30px" class="mx-1">
+                    <img src="../../assets/cash-icon.svg" width="30px" height="30px" class="mx-1">
+                    <img src="../../assets/mastercard-icon.svg" width="30px" height="30px" class="mx-1">
+                    <img src="../../assets/visa-icon1.svg" width="30px" height="30px" class="mx-1">
+                  </p>
+                </div>
+              </div>
+
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- create tab here -->
+    <tabset [justified]="true">
+      <tab>
+        <ng-template tabHeading>
+          <img src="../../assets/menu-ico.svg" width="40px" height="30px" class="mr-2">
+          <b>Menu</b>
+        </ng-template>
+        <!-- menu tab -->
+        <div class="row">
+          <div class="col-md-8 w-100 my-3">
+            <div class="col-md-3 float-left sticky-top">
+              <div class="card p-2 mt-2">
+                <span class="bold"><strong>category</strong></span>
+                <ul role="navigation" snScrollSpy id="foo" class="list-unstyled pl-2 ">
+                    <li><a snScrollSpyItem for="foo" href="#section1" class="d-block nounderline"><span class="text-muted ">Section 1</span></a></li>
+                    <li><a snScrollSpyItem for="foo" href="#section2" class="d-block nounderline"><span class="text-muted ">Section 2</span></a></li>
+                    <li><a snScrollSpyItem for="foo" href="#section3" class="d-block nounderline"><span class="text-muted ">Section 3</span></a></li>
+                    <li><a snScrollSpyItem for="foo" href="#section4" class="d-block nounderline"><span class="text-muted ">Section 4</span></a></li>
+                  </ul>
+              </div>
+            </div>
+            <div class="col-md-9 float-right">
+              <div>
+                  <sn-scroll-spy-section id="section1" for="foo">
+                    <!-- category and card -->
+                    <accordion>
+                      <accordion-group #groupval>
+                        <div accordion-heading> <h3 class="float-left">section 1 </h3>
+                            <i class="pull-right mt-2 float-xs-right fa"
+                            [ngClass]="{'fa-chevron-down': groupval?.isOpen, 'fa-chevron-up': !groupval?.isOpen}"></i>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-3 d-flex justify-content-center">
+                              <img src="../../assets/rest4.png" alt=".resto1 image" class="img-thumbnail" style="width: 120px;height: 100px;">
+                          </div>
+                          <div class="col-md-6">
+                            <h5>food Name</h5>
+                            <p class="text-muted small"> For a limited time only, introducing the all new big stack, made up of 2 100% halal angus beef between double decker buns, 1 slice of cheese, with crunchy lettuce, onions and pickles topped off with bbq sauce and mayo </p>
+                          </div>
+                          <div class="col-md-3 text-right">
+                            <span class="small">AED 16.60</span>
+                            <button type="button" class="btn btn-success btn-circle ml-2" (click)="addIngredients()"><i class="fa fa-plus"></i></button>
+                            <rating [(ngModel)]="rate" [max]="5" [readonly]="true" class="rating"></rating>
+                          </div>
+                        </div>
+                        <hr class="w-75 mt-0">
+                        <div class="row">
+                          <div class="col-md-3 d-flex justify-content-center">
+                              <img src="../../assets/rest4.png" alt=".resto1 image" class="img-thumbnail" style="width: 120px;height: 100px;">
+                          </div>
+                          <div class="col-md-6">
+                            <h5>food Name</h5>
+                            <p class="text-muted small"> For a limited time only, introducing the all new big stack, made up of 2 100% halal angus beef between double decker buns, 1 slice of cheese, with crunchy lettuce, onions and pickles topped off with bbq sauce and mayo </p>
+                          </div>
+                          <div class="col-md-3 text-right">
+                            <span class="small">AED 16.60</span>
+                            <button type="button" class="btn btn-success btn-circle ml-2" (click)="addIngredients()"><i class="fa fa-plus"></i></button>
+                            <rating [(ngModel)]="rate" [max]="5" [readonly]="true" class="rating"></rating>
+                          </div>
+                        </div>
+                        <hr class="w-75 mt-0">
+                        <div class="row">
+                          <div class="col-md-3 d-flex justify-content-center">
+                              <img src="../../assets/rest4.png" alt=".resto1 image" class="img-thumbnail" style="width: 120px;height: 100px;">
+                          </div>
+                          <div class="col-md-6">
+                            <h5>food Name</h5>
+                            <p class="text-muted small"> For a limited time only, introducing the all new big stack, made up of 2 100% halal angus beef between double decker buns, 1 slice of cheese, with crunchy lettuce, onions and pickles topped off with bbq sauce and mayo </p>
+                          </div>
+                          <div class="col-md-3 text-right">
+                            <span class="small">AED 16.60</span>
+                            <button type="button" class="btn btn-success btn-circle ml-2" (click)="addIngredients()"><i class="fa fa-plus"></i></button>
+                            <rating [(ngModel)]="rate" [max]="5" [readonly]="true" class="rating"></rating>
+                          </div>
+                        </div>
+                        <hr class="w-75 mt-0">
+                        <div class="row">
+                          <div class="col-md-3 d-flex justify-content-center">
+                              <img src="../../assets/rest4.png" alt=".resto1 image" class="img-thumbnail" style="width: 120px;height: 100px;">
+                          </div>
+                          <div class="col-md-6">
+                            <h5>food Name</h5>
+                            <p class="text-muted small"> For a limited time only, introducing the all new big stack, made up of 2 100% halal angus beef between double decker buns, 1 slice of cheese, with crunchy lettuce, onions and pickles topped off with bbq sauce and mayo </p>
+                          </div>
+                          <div class="col-md-3 text-right">
+                            <span class="small">AED 16.60</span>
+                            <button type="button" class="btn btn-success btn-circle ml-2" (click)="addIngredients()"><i class="fa fa-plus"></i></button>
+                            <rating [(ngModel)]="rate" [max]="5" [readonly]="true" class="rating"></rating>
+                          </div>
+                        </div>
+
+                      </accordion-group>
+                    </accordion>
+                  </sn-scroll-spy-section>
+                  <sn-scroll-spy-section id="section2" for="foo">
+                      <accordion>
+                          <accordion-group #groupval>
+                            <div accordion-heading> <h3 class="float-left">section 1 </h3>
+                                <i class="pull-right mt-2 float-xs-right fa"
+                                [ngClass]="{'fa-chevron-down': groupval?.isOpen, 'fa-chevron-up': !groupval?.isOpen}"></i>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-3 d-flex justify-content-center">
+                                  <img src="../../assets/rest4.png" alt=".resto1 image" class="img-thumbnail" style="width: 120px;height: 100px;">
+                              </div>
+                              <div class="col-md-6">
+                                <h5>food Name</h5>
+                                <p class="text-muted small"> For a limited time only, introducing the all new big stack, made up of 2 100% halal angus beef between double decker buns, 1 slice of cheese, with crunchy lettuce, onions and pickles topped off with bbq sauce and mayo </p>
+                              </div>
+                              <div class="col-md-3 text-right">
+                                <span class="small">AED 16.60</span>
+                                <button type="button" class="btn btn-success btn-circle ml-2" (click)="addIngredients()"><i class="fa fa-plus"></i></button>
+                                <rating [(ngModel)]="rate" [max]="5" [readonly]="true" class="rating"></rating>
+                              </div>
+                            </div>
+                            <hr class="w-75 mt-0">
+                            <div class="row">
+                              <div class="col-md-3 d-flex justify-content-center">
+                                  <img src="../../assets/rest4.png" alt=".resto1 image" class="img-thumbnail" style="width: 120px;height: 100px;">
+                              </div>
+                              <div class="col-md-6">
+                                <h5>food Name</h5>
+                                <p class="text-muted small"> For a limited time only, introducing the all new big stack, made up of 2 100% halal angus beef between double decker buns, 1 slice of cheese, with crunchy lettuce, onions and pickles topped off with bbq sauce and mayo </p>
+                              </div>
+                              <div class="col-md-3 text-right">
+                                <span class="small">AED 16.60</span>
+                                <button type="button" class="btn btn-success btn-circle ml-2" (click)="addIngredients()"><i class="fa fa-plus"></i></button>
+                                <rating [(ngModel)]="rate" [max]="5" [readonly]="true" class="rating"></rating>
+                              </div>
+                            </div>
+                            <hr class="w-75 mt-0">
+                            <div class="row">
+                              <div class="col-md-3 d-flex justify-content-center">
+                                  <img src="../../assets/rest4.png" alt=".resto1 image" class="img-thumbnail" style="width: 120px;height: 100px;">
+                              </div>
+                              <div class="col-md-6">
+                                <h5>food Name</h5>
+                                <p class="text-muted small"> For a limited time only, introducing the all new big stack, made up of 2 100% halal angus beef between double decker buns, 1 slice of cheese, with crunchy lettuce, onions and pickles topped off with bbq sauce and mayo </p>
+                              </div>
+                              <div class="col-md-3 text-right">
+                                <span class="small">AED 16.60</span>
+                                <button type="button" class="btn btn-success btn-circle ml-2" (click)="addIngredients()"><i class="fa fa-plus"></i></button>
+                                <rating [(ngModel)]="rate" [max]="5" [readonly]="true" class="rating"></rating>
+                              </div>
+                            </div>
+                            <hr class="w-75 mt-0">
+                            <div class="row">
+                              <div class="col-md-3 d-flex justify-content-center">
+                                  <img src="../../assets/rest4.png" alt=".resto1 image" class="img-thumbnail" style="width: 120px;height: 100px;">
+                              </div>
+                              <div class="col-md-6">
+                                <h5>food Name</h5>
+                                <p class="text-muted small"> For a limited time only, introducing the all new big stack, made up of 2 100% halal angus beef between double decker buns, 1 slice of cheese, with crunchy lettuce, onions and pickles topped off with bbq sauce and mayo </p>
+                              </div>
+                              <div class="col-md-3 text-right">
+                                <span class="small">AED 16.60</span>
+                                <button type="button" class="btn btn-success btn-circle ml-2" (click)="addIngredients()"><i class="fa fa-plus"></i></button>
+                                <rating [(ngModel)]="rate" [max]="5" [readonly]="true" class="rating"></rating>
+                              </div>
+                            </div>
+    
+                          </accordion-group>
+                        </accordion>
+                  </sn-scroll-spy-section>
+                  <sn-scroll-spy-section id="section3" for="foo">
+                      <accordion>
+                          <accordion-group #groupval>
+                            <div accordion-heading> <h3 class="float-left">section 1 </h3>
+                                <i class="pull-right mt-2 float-xs-right fa"
+                                [ngClass]="{'fa-chevron-down': groupval?.isOpen, 'fa-chevron-up': !groupval?.isOpen}"></i>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-3 d-flex justify-content-center">
+                                  <img src="../../assets/rest4.png" alt=".resto1 image" class="img-thumbnail" style="width: 120px;height: 100px;">
+                              </div>
+                              <div class="col-md-6">
+                                <h5>food Name</h5>
+                                <p class="text-muted small"> For a limited time only, introducing the all new big stack, made up of 2 100% halal angus beef between double decker buns, 1 slice of cheese, with crunchy lettuce, onions and pickles topped off with bbq sauce and mayo </p>
+                              </div>
+                              <div class="col-md-3 text-right">
+                                <span class="small">AED 16.60</span>
+                                <button type="button" class="btn btn-success btn-circle ml-2" (click)="addIngredients()"><i class="fa fa-plus"></i></button>
+                                <rating [(ngModel)]="rate" [max]="5" [readonly]="true" class="rating"></rating>
+                              </div>
+                            </div>
+                            <hr class="w-75 mt-0">
+                            <div class="row">
+                              <div class="col-md-3 d-flex justify-content-center">
+                                  <img src="../../assets/rest4.png" alt=".resto1 image" class="img-thumbnail" style="width: 120px;height: 100px;">
+                              </div>
+                              <div class="col-md-6">
+                                <h5>food Name</h5>
+                                <p class="text-muted small"> For a limited time only, introducing the all new big stack, made up of 2 100% halal angus beef between double decker buns, 1 slice of cheese, with crunchy lettuce, onions and pickles topped off with bbq sauce and mayo </p>
+                              </div>
+                              <div class="col-md-3 text-right">
+                                <span class="small">AED 16.60</span>
+                                <button type="button" class="btn btn-success btn-circle ml-2" (click)="addIngredients()"><i class="fa fa-plus"></i></button>
+                                <rating [(ngModel)]="rate" [max]="5" [readonly]="true" class="rating"></rating>
+                              </div>
+                            </div>
+                            <hr class="w-75 mt-0">
+                            <div class="row">
+                              <div class="col-md-3 d-flex justify-content-center">
+                                  <img src="../../assets/rest4.png" alt=".resto1 image" class="img-thumbnail" style="width: 120px;height: 100px;">
+                              </div>
+                              <div class="col-md-6">
+                                <h5>food Name</h5>
+                                <p class="text-muted small"> For a limited time only, introducing the all new big stack, made up of 2 100% halal angus beef between double decker buns, 1 slice of cheese, with crunchy lettuce, onions and pickles topped off with bbq sauce and mayo </p>
+                              </div>
+                              <div class="col-md-3 text-right">
+                                <span class="small">AED 16.60</span>
+                                <button type="button" class="btn btn-success btn-circle ml-2" (click)="addIngredients()"><i class="fa fa-plus"></i></button>
+                                <rating [(ngModel)]="rate" [max]="5" [readonly]="true" class="rating"></rating>
+                              </div>
+                            </div>
+                            <hr class="w-75 mt-0">
+                            <div class="row">
+                              <div class="col-md-3 d-flex justify-content-center">
+                                  <img src="../../assets/rest4.png" alt=".resto1 image" class="img-thumbnail" style="width: 120px;height: 100px;">
+                              </div>
+                              <div class="col-md-6">
+                                <h5>food Name</h5>
+                                <p class="text-muted small"> For a limited time only, introducing the all new big stack, made up of 2 100% halal angus beef between double decker buns, 1 slice of cheese, with crunchy lettuce, onions and pickles topped off with bbq sauce and mayo </p>
+                              </div>
+                              <div class="col-md-3 text-right">
+                                <span class="small">AED 16.60</span>
+                                <button type="button" class="btn btn-success btn-circle ml-2" (click)="addIngredients()"><i class="fa fa-plus"></i></button>
+                                <rating [(ngModel)]="rate" [max]="5" [readonly]="true" class="rating"></rating>
+                              </div>
+                            </div>
+    
+                          </accordion-group>
+                        </accordion>
+                  </sn-scroll-spy-section>
+                  <sn-scroll-spy-section id="section4" for="foo">
+                      <accordion>
+                          <accordion-group #groupval>
+                            <div accordion-heading> <h3 class="float-left">section 1 </h3>
+                                <i class="pull-right mt-2 float-xs-right fa"
+                                [ngClass]="{'fa-chevron-down': groupval?.isOpen, 'fa-chevron-up': !groupval?.isOpen}"></i>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-3 d-flex justify-content-center">
+                                  <img src="../../assets/rest4.png" alt=".resto1 image" class="img-thumbnail" style="width: 120px;height: 100px;">
+                              </div>
+                              <div class="col-md-6">
+                                <h5>food Name</h5>
+                                <p class="text-muted small"> For a limited time only, introducing the all new big stack, made up of 2 100% halal angus beef between double decker buns, 1 slice of cheese, with crunchy lettuce, onions and pickles topped off with bbq sauce and mayo </p>
+                              </div>
+                              <div class="col-md-3 text-right">
+                                <span class="small">AED 16.60</span>
+                                <button type="button" class="btn btn-success btn-circle ml-2" (click)="addIngredients()"><i class="fa fa-plus"></i></button>
+                                <rating [(ngModel)]="rate" [max]="5" [readonly]="true" class="rating"></rating>
+                              </div>
+                            </div>
+                            <hr class="w-75 mt-0">
+                            <div class="row">
+                              <div class="col-md-3 d-flex justify-content-center">
+                                  <img src="../../assets/rest4.png" alt=".resto1 image" class="img-thumbnail" style="width: 120px;height: 100px;">
+                              </div>
+                              <div class="col-md-6">
+                                <h5>food Name</h5>
+                                <p class="text-muted small"> For a limited time only, introducing the all new big stack, made up of 2 100% halal angus beef between double decker buns, 1 slice of cheese, with crunchy lettuce, onions and pickles topped off with bbq sauce and mayo </p>
+                              </div>
+                              <div class="col-md-3 text-right">
+                                <span class="small">AED 16.60</span>
+                                <button type="button" class="btn btn-success btn-circle ml-2" (click)="addIngredients()"><i class="fa fa-plus"></i></button>
+                                <rating [(ngModel)]="rate" [max]="5" [readonly]="true" class="rating"></rating>
+                              </div>
+                            </div>
+                            <hr class="w-75 mt-0">
+                            <div class="row">
+                              <div class="col-md-3 d-flex justify-content-center">
+                                  <img src="../../assets/rest4.png" alt=".resto1 image" class="img-thumbnail" style="width: 120px;height: 100px;">
+                              </div>
+                              <div class="col-md-6">
+                                <h5>food Name</h5>
+                                <p class="text-muted small"> For a limited time only, introducing the all new big stack, made up of 2 100% halal angus beef between double decker buns, 1 slice of cheese, with crunchy lettuce, onions and pickles topped off with bbq sauce and mayo </p>
+                              </div>
+                              <div class="col-md-3 text-right">
+                                <span class="small">AED 16.60</span>
+                                <button type="button" class="btn btn-success btn-circle ml-2" (click)="addIngredients()"><i class="fa fa-plus"></i></button>
+                                <rating [(ngModel)]="rate" [max]="5" [readonly]="true" class="rating"></rating>
+                              </div>
+                            </div>
+                            <hr class="w-75 mt-0">
+                            <div class="row">
+                              <div class="col-md-3 d-flex justify-content-center">
+                                  <img src="../../assets/rest4.png" alt=".resto1 image" class="img-thumbnail" style="width: 120px;height: 100px;">
+                              </div>
+                              <div class="col-md-6">
+                                <h5>food Name</h5>
+                                <p class="text-muted small"> For a limited time only, introducing the all new big stack, made up of 2 100% halal angus beef between double decker buns, 1 slice of cheese, with crunchy lettuce, onions and pickles topped off with bbq sauce and mayo </p>
+                              </div>
+                              <div class="col-md-3 text-right">
+                                <span class="small">AED 16.60</span>
+                                <button type="button" class="btn btn-success btn-circle ml-2" (click)="addIngredients()"><i class="fa fa-plus"></i></button>
+                                <rating [(ngModel)]="rate" [max]="5" [readonly]="true" class="rating"></rating>
+                              </div>
+                            </div>
+    
+                          </accordion-group>
+                        </accordion>
+                  </sn-scroll-spy-section>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="sticky-top pt-2">
+                <app-cart></app-cart> 
+            </div>
+          </div>
+        </div>
+
+      </tab>
+      <tab>
+        <ng-template tabHeading>
+          <img src="../../assets/icon_reviews.svg" width="40px" height="30px" class="mr-2">
+          <b>Reviews</b>
+        </ng-template>
+      </tab>
+      <tab>
+        <ng-template tabHeading>
+          <img src="../../assets/icon_info_menu.svg" width="40px" height="30px" class="mr-2">
+          <b>Info</b>
+        </ng-template>
+      </tab>
+    </tabset>
+
+
+</div>

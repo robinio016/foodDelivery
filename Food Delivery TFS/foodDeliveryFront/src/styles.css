@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../node_modules/bootswatch/dist/united/bootstrap.min.css';
+@import '../node_modules/font-awesome/css/font-awesome.min.css';
+@import '../node_modules/bootstrap-social/bootstrap-social.css';
+@import '../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css';
+
+body {
+    font-family: Verdana,Arial,"Times New Roman";
+}
+.rating {
+    color:goldenrod; 
+    font-size: 20px;
+}
+
+.arr-right .breadcrumb-item+.breadcrumb-item::before {
+    content:">";
+    vertical-align:top;
+    color: #408080;
+    font-size:15px;
+    line-height:25px;
+  }
+
+  .btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}

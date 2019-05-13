@@ -1,0 +1,14 @@
+C:\Users\dridi\Desktop\foodDelivery\fooddeliveryback\obj\Debug\netcoreapp2.1\fooddeliveryback.csprojAssemblyReference.cache
+C:\Users\dridi\Desktop\foodDelivery\fooddeliveryback\obj\Debug\netcoreapp2.1\fooddeliveryback.csproj.CoreCompileInputs.cache
+C:\Users\dridi\Desktop\foodDelivery\fooddeliveryback\obj\Debug\netcoreapp2.1\fooddeliveryback.RazorAssemblyInfo.cache
+C:\Users\dridi\Desktop\foodDelivery\fooddeliveryback\obj\Debug\netcoreapp2.1\fooddeliveryback.RazorAssemblyInfo.cs
+C:\Users\dridi\Desktop\foodDelivery\fooddeliveryback\obj\Debug\netcoreapp2.1\fooddeliveryback.AssemblyInfoInputs.cache
+C:\Users\dridi\Desktop\foodDelivery\fooddeliveryback\obj\Debug\netcoreapp2.1\fooddeliveryback.AssemblyInfo.cs
+C:\Users\dridi\Desktop\foodDelivery\fooddeliveryback\bin\Debug\netcoreapp2.1\fooddeliveryback.deps.json
+C:\Users\dridi\Desktop\foodDelivery\fooddeliveryback\bin\Debug\netcoreapp2.1\fooddeliveryback.runtimeconfig.json
+C:\Users\dridi\Desktop\foodDelivery\fooddeliveryback\bin\Debug\netcoreapp2.1\fooddeliveryback.runtimeconfig.dev.json
+C:\Users\dridi\Desktop\foodDelivery\fooddeliveryback\bin\Debug\netcoreapp2.1\fooddeliveryback.dll
+C:\Users\dridi\Desktop\foodDelivery\fooddeliveryback\bin\Debug\netcoreapp2.1\fooddeliveryback.pdb
+C:\Users\dridi\Desktop\foodDelivery\fooddeliveryback\obj\Debug\netcoreapp2.1\fooddeliveryback.RazorTargetAssemblyInfo.cache
+C:\Users\dridi\Desktop\foodDelivery\fooddeliveryback\obj\Debug\netcoreapp2.1\fooddeliveryback.dll
+C:\Users\dridi\Desktop\foodDelivery\fooddeliveryback\obj\Debug\netcoreapp2.1\fooddeliveryback.pdb
